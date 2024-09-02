@@ -59,8 +59,7 @@ const AssessmentDashboardPage = () => {
 
   const handleAction = (action) => {
     navigate('/archive-deletion');
-    // If you need to perform the action (delete or archive) immediately, you can call the respective functions here
-    // For example, if 'action' is 'delete', you can call handleDelete()
+
   };
 
   const filteredAssessments = useMemo(() => {
@@ -251,7 +250,7 @@ const AssessmentDashboardPage = () => {
                 <p className="mb-1 text-muted">Student 1 submitted Assessment Title 1</p>
                 <small className="text-muted">Date: August 26, 2024</small>
               </div>
-              {/* Add more activity items as needed */}
+       
             </div>
           </section>
         </div>
