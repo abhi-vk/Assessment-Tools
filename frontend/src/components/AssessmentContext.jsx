@@ -1,12 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
 
-// Create Context
+
 const AssessmentContext = createContext();
 
-// Custom Hook to use the context
+
 export const useAssessments = () => useContext(AssessmentContext);
 
-// Provider Component
+
 export const AssessmentProvider = ({ children }) => {
   const [drafts, setDrafts] = useState([]);
   const [published, setPublished] = useState([]);
@@ -16,7 +16,7 @@ export const AssessmentProvider = ({ children }) => {
     setDrafts((prevDrafts) => [...prevDrafts, assessment]);
   };
 
-  // Function to publish an assessment
+
   const publishAssessment = (assessment) => {
     setDrafts((prevDrafts) =>
       prevDrafts.filter((draft) => draft.id !== assessment.id)
@@ -24,7 +24,7 @@ export const AssessmentProvider = ({ children }) => {
     setPublished((prevPublished) => [...prevPublished, assessment]);
   };
 
-  // Provide the context value
+ 
   return (
     <AssessmentContext.Provider value={{ drafts, published, setPublished, saveDraft, publishAssessment }}>
       {children}
@@ -32,5 +32,5 @@ export const AssessmentProvider = ({ children }) => {
   );
 };
 
-// Ensure that context and hook are properly exported
+
 export { AssessmentContext };
