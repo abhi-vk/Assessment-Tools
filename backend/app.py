@@ -258,7 +258,7 @@ def login_teacher():
     finally:
         release_db_connection(conn)
 
-# Example of a protected route (GET) - removed JWT authentication
+# Example of a protected route (GET) 
 @app.route('/protected', methods=['GET'])
 def protected():
     return jsonify({"message": "This route is now public"}), 200
